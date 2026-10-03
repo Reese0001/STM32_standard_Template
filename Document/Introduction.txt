@@ -1,0 +1,83 @@
+﻿Template Project Introduction
+=============================
+
+MCU:        STM32F103VE (Cortex-M3)
+Flash:      512 KB
+RAM:        64 KB
+Library:    STM32F10x Standard Peripheral Library V3.5.0
+IDE:        Keil MDK-ARM V5
+Crystal:    HSE 8 MHz -> PLL 72 MHz
+
+Directories:
+-----------
+User/            用户应用代码
+  main.c         主函数 (标准骨架)
+  stm32f10x_it.c 中断服务函数
+  stm32f10x_it.h 中断服务函数头文件
+  stm32f10x_conf.h 标准外设库配置
+
+Library/CMSIS/    CMSIS 标准外设驱动库 (misc, adc, gpio, tim, usart, ...)
+Library/StartUp/  启动文件 (startup_stm32f10x_hd.s + system_stm32f10x)
+Library/HAL/      STM32F1xx HAL 驱动库 (备用)
+Library/System/   系统级封装
+  AD/             ADC 采集
+  BKP/            备份寄存器
+  CAN/            CAN 总线
+  delay/          SysTick 阻塞延时
+  Flash/          Flash 读写
+  I2C/            I2C1/2 硬件 + 软件模拟
+  lowpower/       低功耗
+  RTC/            RTC 时钟
+  SPI/            SPI1/2 硬件 + 软件模拟
+  sys/            时钟 & NVIC 配置
+  TIM1~4/         定时器(计数/编码器/PWM)
+  USART/          USART1~3
+  WDG/            独立看门狗
+
+Library/Hardware/ 外设驱动
+  AHT10/          温湿度传感器
+  Buzzer/         蜂鸣器
+  DHT11/          温湿度传感器
+  Encoder/        旋转编码器
+  ESP8266/        WiFi 模块
+  HCRS04/         超声波测距
+  HX711/          称重传感器
+  InkScreen/      墨水屏
+  KEY/            按键 + 状态机
+  LED/            LED
+  MatrixKey/      矩阵键盘
+  Motor/          直流电机 + 编码器电机
+  MPU6050/        六轴姿态传感器
+  Nixie/          数码管 (74HC595 / MAX7219)
+  OLED/           OLED 显示屏
+  PS2/            PS2 手柄
+  Servo/          舵机
+  W25QXX/         SPI Flash
+
+Library/Component/ 软件组件
+  Clock/          闹钟/计时器
+  CRTP/           通信协议
+  FatFs/          文件系统 (SPI Flash)
+  OLEDGLib/       OLED 图形库
+  Shell/          命令行解释器
+
+Library/Algorithm/ 算法库
+  KLM/            卡尔曼滤波
+  PID_*           PID 控制 (位置式/增量式)
+
+Objects/          编译中间文件 (自动生成, .gitignore 已忽略)
+Listings/         汇编列表文件 (自动生成, .gitignore 已忽略)
+Document/         项目文档
+DebugConfig/      调试器配置
+RTE/              CMSIS Pack 运行时环境配置
+
+Quick Start:
+-----------
+1. 打开 Template.uvprojx
+2. 在 User/main.c 中编写你的应用代码
+3. 按需在 stm32f10x_conf.h 中注释掉不用的外设头文件
+4. 编译 (F7), 下载 (F8)
+
+Batch Clean:
+-----------
+运行 keilkilll.bat 清理所有编译中间文件

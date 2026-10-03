@@ -1,0 +1,42 @@
+﻿# Keil MDK-ARM 工程 .gitignore
+
+# --- 编译中间文件 ---
+*.o
+*.d
+*.crf
+*.axf
+*.elf
+*.hex
+*.bin
+*.lst
+*.map
+*.htm
+*.build_log.htm
+*.sct
+*.dep
+*.iex
+*.lnp
+*.plg
+*.tra
+
+# --- Keil 工程临时文件 ---
+*.bak
+*.tmp
+*.obj
+*.omf
+*.mpf
+*.mpj
+*.__i
+*.ddk
+*.edk
+*.rpt
+
+# --- J-Link ---
+JLinkLog.txt
+*.jlink
+
+# --- UV4 用户布局 (每台机器不同, 建议忽略) ---
+# *.uvguix.*
+
+# --- 用户特定配置 ---
+# *.uvoptx
